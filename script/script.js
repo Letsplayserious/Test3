@@ -17,6 +17,14 @@ btn[0].addEventListener('mouseenter', function(event){
 }
 )
 
+btn[1].addEventListener("mouseenter",function(event){
+    let target = event.target;
+    target.style.backgroundColor = "red";
+});
 //event.type - свойство объекта event(тип события)
-
 //event.target - цель события
+
+let link = document.getElementsByTagName("a");
+link[0].addEventListener('click', function(event){
+    event.preventDefault();
+})
