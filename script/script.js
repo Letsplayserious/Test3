@@ -1,22 +1,22 @@
-let text = document.getElementById('text');
-let btn = document.querySelectorAll('button');
+let a = [1,244,3,4,5];
 
-// btn[0].addEventListener('click', function(){
-//     alert("Вы нажали на кнопку");
-// })
+// let sum = a[0];
 
-// btn[0].addEventListener('click', function(){
-//     alert("Вы опять нажали на первую кнопку");
-// })
+// for (let i = 0; i < a.length; i++){
+//     if(a[i]> sum){
+//         sum = a[i];
+//     }
+// }
 
-btn[0].addEventListener('mouseenter', function(event){
-    let target = event.target;
-    target.style.display = "none";
-    // console.log('Произошло событие: ' + event.type + " на элементе " +
-    // event.target);
+// console.log(sum);
+
+let max = a[0];
+let index = 0;
+for (let i = 0; i < a.length; i ++){
+    if(a[i] > max){
+        max = a[i];
+        index = i;
+    }
 }
-)
 
-//event.type - свойство объекта event(тип события)
-
-//event.target - цель события
+console.log(index);
