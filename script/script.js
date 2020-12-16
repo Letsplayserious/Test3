@@ -1,22 +1,31 @@
-let a = [1,244,3,4,5];
+const arr = [{
+    content: "Что вершит судьбу человечества",
+    author: "Кентаро Миура",
+    date: "1989"
+}, {
+    content: "Non este salvatori salvator",
+    author: "Элиезер Юдковски",
+    date: "2010"
+}, {
+    content: "Wagablaga",
+    author: "Dan Harmon",
+    date: "2017"
+}];
 
-// let sum = a[0];
-
-// for (let i = 0; i < a.length; i++){
-//     if(a[i]> sum){
-//         sum = a[i];
-//     }
-// }
-
-// console.log(sum);
-
-let max = a[0];
-let index = 0;
-for (let i = 0; i < a.length; i ++){
-    if(a[i] > max){
-        max = a[i];
-        index = i;
-    }
+let result = (arr) => {
+    return arr.reduce((accum, item) =>{
+        accum.content = accum.content + " " + item.content;
+        debugger;
+        accum.author.push(item["author"]);
+        if(!accum.date || new Date(accum.date).valueOf() <= new Date(item.date)){
+            accum.date = item.date;
+        }
+        return accum;
+    }, {
+        content: "",
+        author: [],
+        date: null
+    })
 }
 
-console.log(index);
+console.log(result(arr));
